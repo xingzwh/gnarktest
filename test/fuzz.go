@@ -7,7 +7,7 @@ import (
 	"reflect"
 	"time"
 
-	"github.com/xingzwh/gnarktest"
+	"github.com/xingzwh/gnark"
 	"github.com/consensys/gnark-crypto/ecc"
 	"github.com/xingzwh/gnarktest/frontend"
 	"github.com/xingzwh/gnarktest/frontend/schema"
