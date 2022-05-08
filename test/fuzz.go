@@ -24,7 +24,7 @@ func init() {
 	}
 
 	// moduli
-	for _, curve := range gnark.Curves() {
+	for _, curve := range gnarktest.Curves() {
 		fp := curve.Info().Fp.Modulus()
 		fr := curve.Info().Fr.Modulus()
 		seedCorpus = append(seedCorpus, fp)
