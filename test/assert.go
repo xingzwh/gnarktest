@@ -23,7 +23,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/xingzwh/gnark"
+	"github.com/xingzwh/gnarktest"
 	"github.com/consensys/gnark-crypto/ecc"
 	"github.com/xingzwh/gnarktest/backend"
 	"github.com/xingzwh/gnarktest/backend/groth16"
