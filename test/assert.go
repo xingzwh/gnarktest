@@ -456,7 +456,7 @@ func (assert *Assert) options(opts ...TestingOption) testingConfig {
 	opt := testingConfig{
 		witnessSerialization: true,
 		backends:             backend.Implemented(),
-		curves:               gnark.Curves(),
+		curves:               gnarktest.Curves(),
 	}
 	for _, option := range opts {
 		err := option(&opt)
@@ -465,7 +465,7 @@ func (assert *Assert) options(opts ...TestingOption) testingConfig {
 
 	if testing.Short() {
 		// if curves are all there, we just test with bn254
-		if reflect.DeepEqual(opt.curves, gnark.Curves()) {
+		if reflect.DeepEqual(opt.curves, gnarktest.Curves()) {
 			opt.curves = []ecc.ID{ecc.BN254}
 		}
 	}
