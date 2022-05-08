@@ -14,7 +14,7 @@
 //
 // User documentation
 // https://docs.gnark.consensys.net
-package gnarktest
+package gnark
 
 import "github.com/consensys/gnark-crypto/ecc"
 
