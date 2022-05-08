@@ -38,7 +38,7 @@ import (
 
 	"github.com/consensys/gnark-crypto/fiat-shamir"
 	"github.com/xingzwh/gnarktest/backend"
-	"github.com/xingzwh/gnarktest/internal/utils"
+	"github.com/xingzwh/gnarktest/curvepp/utils"
 	"github.com/xingzwh/gnarktest/logger"
 )
 
