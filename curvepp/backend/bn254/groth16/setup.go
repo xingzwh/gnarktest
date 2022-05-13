@@ -69,7 +69,7 @@ type VerifyingKey struct {
 	// -[δ]2, -[γ]2: see proof.Verify() for more details
 	G2 struct {
 		Beta, Delta, Gamma curve.G2Affine
-		deltaNeg, gammaNeg curve.G2Affine // not serialized
+		DeltaNeg, GammaNeg curve.G2Affine // not serialized
 	}
 
 	// e(α, β)
