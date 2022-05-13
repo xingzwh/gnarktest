@@ -73,7 +73,7 @@ type VerifyingKey struct {
 	}
 
 	// e(α, β)
-	e curve.GT // not serialized
+	E curve.GT // not serialized
 }
 
 // Setup constructs the SRS
@@ -265,7 +265,7 @@ func Setup(r1cs *cs.R1CS, pk *ProvingKey, vk *VerifyingKey) error {
 	vk.G1.Beta = pk.G1.Beta
 	vk.G1.Delta = pk.G1.Delta
 
-	vk.e, err = curve.Pair([]curve.G1Affine{pk.G1.Alpha}, []curve.G2Affine{pk.G2.Beta})
+	vk.E, err = curve.Pair([]curve.G1Affine{pk.G1.Alpha}, []curve.G2Affine{pk.G2.Beta})
 	if err != nil {
 		return err
 	}
