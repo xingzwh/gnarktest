@@ -57,7 +57,7 @@ func Verify(proof *Proof, vk *VerifyingKey, publicWitness bn254witness.Witness) 
 	// compute (eKrsδ, eArBs)
 	go func() {
 		var errML error
-		doubleML, errML = curve.MillerLoop([]curve.G1Affine{proof.Krs, proof.Ar}, []curve.G2Affine{vk.G2.deltaNeg, proof.Bs})
+		doubleML, errML = curve.MillerLoop([]curve.G1Affine{proof.Krs, proof.Ar}, []curve.G2Affine{vk.G2.DeltaNeg, proof.Bs})
 		chDone <- errML
 		close(chDone)
 	}()
@@ -71,7 +71,7 @@ func Verify(proof *Proof, vk *VerifyingKey, publicWitness bn254witness.Witness) 
 	var kSumAff curve.G1Affine
 	kSumAff.FromJacobian(&kSum)
 
-	right, err := curve.MillerLoop([]curve.G1Affine{kSumAff}, []curve.G2Affine{vk.G2.gammaNeg})
+	right, err := curve.MillerLoop([]curve.G1Affine{kSumAff}, []curve.G2Affine{vk.G2.GammaNeg})
 	if err != nil {
 		return err
 	}
@@ -82,7 +82,7 @@ func Verify(proof *Proof, vk *VerifyingKey, publicWitness bn254witness.Witness) 
 	}
 
 	right = curve.FinalExponentiation(&right, &doubleML)
-	if !vk.e.Equal(&right) {
+	if !vk.E.Equal(&right) {
 		return errPairingCheckFailed
 	}
 
